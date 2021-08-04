@@ -1,7 +1,7 @@
-# Creazione Altcoin (fork bitcoin 0.20.0) + Mining Pool (Yiimp) Ubuntu 18.04
+# Creazione Altcoin (fork bitcoin 0.20) + Mining Pool (Yiimp) Ubuntu 18.04
 
 In questo documento è riportata la riproduzione di una rete Bitcoin e la creazione di una pool di mining sulla stessa. 
-E' stata utilizzata la versione di BitcoinCore 0.20.0.
+E' stata utilizzata la versione di BitcoinCore 0.20
 
 Sono necessarie due istanze Unix: 
 
@@ -229,9 +229,9 @@ commenta
 “return state.DoS(100, false, REJECT_INVALID, "bad-cb-height", false, "block height mismatch in coinbase");”
 ```
 
-validation.h  :
--   you need to change the DEFAULT_MAX_TIP_AGE to something very large (60*60*24*365 for example). This is temporary. This is the interval when the blockchain is not mining. At starting you might have a genesis made long time ago, and not have mined for a while, so that this has to be changed or your Coin will not work.
--   DEFAULT_CHECKPOINTS_ENABLED = true; needs to be changed to false, or your coin will try to verify that you are on the Bitcoin blockchain, which you are not.
+nel file validation.h  :
+-   cambia DEFAULT_MAX_TIP_AGE in qualcosa del tipo 60*60*24*365
+-   DEFAULT_CHECKPOINTS_ENABLED = true; modificato in false o la tua coin proverà a verificare di essere sulla blockchain bitcoin.
 
 in 
 
