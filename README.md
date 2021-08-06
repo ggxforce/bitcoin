@@ -285,8 +285,15 @@ bash install.sh (Non lanciare come utente root)
 
 Riavvia il sistema
 
-http://xxx.xxx.xxx.xxx or https://xxx.xxx.xxx.xxx (se hai scelto SSL).
-http://xxx.xxx.xxx.xxx/AdminPanel or https://xxx.xxx.xxx.xxx/AdminPanel per accedere al pannello admin della pool.
+Installa memcache7.3
+
+
+```bash
+sudo apt-get install -y php7.3-memcache
+```
+
+http://xxx.xxx.xxx.xxx or /site/adminpanel.
+https://xxx.xxx.xxx.xxx/site/adminpanel per accedere al pannello admin della pool.
 
 
 
