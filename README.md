@@ -10,12 +10,22 @@ Creazione della mining pool e server di sviluppo - Creazione nodo secondario e W
 Installa la versione di Ubuntu su entrambi i server (18.04 nell'esempio). 
 Per comodità installeremo Mate come interfaccia grafica e xrpd (Windows) per la connessione remota.
 Qualora volessimo connetterci da OSX è consigliato utilizzare vncserver.
- 
+
+
+```bash
 sudo apt update
 sudo apt install ubuntu-mate-desktop
+sudo apt install gnome-panel
+```
 
+per collegamento remoto da windows installa 
+
+```bash
 sudo apt install xrdp
 sudo systemctl enable xrdp
+```
+
+
 
 Installa le librerie necessarie
 
