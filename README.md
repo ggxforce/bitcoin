@@ -32,7 +32,7 @@ Installa le librerie necessarie
 ```bash
 sudo apt-get install build-essential libtool autotools-dev automake pkg-config bsdmainutils python3 libssl-dev libevent-dev 
 libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-test-dev libboost-thread-dev libminiupnpc-dev libzmq3-dev 
-libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler libsqlite3-dev 
+libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler libsqlite3-dev libdb++-dev
 ```
 Installa le lib boost per non avere problemi in fase di compilazione
 
@@ -190,7 +190,14 @@ export BDB_PREFIX='<PATH-TO>/db4'
 
 ```bash
 ./autogen.sh
-./configure BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include"
+./configure BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include" 
+```
+
+Se desideri aprire bitcoin attraverso GUI il comando è il seguente:
+
+```bash
+./autogen.sh
+./configure BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include" -with-gui
 ```
 
 se hai a disposizione una singola CPU
@@ -203,7 +210,21 @@ Altrimenti (farai molto più in fretta ;) )
 
 ```bash
 make -j "$(($(nproc)+1))"
+```
 
+Per avviare bitcoin senza gui
+
+```bash
+./bitcoind -daemon
+```
+
+con GUI all'interno di /src/qt
+
+```bash
+./bitcoin-qt
+```
+
+# Configurazioni Aggiuntive
 
 ```bash
 // modifica i BIP in modo che partano dall'1
